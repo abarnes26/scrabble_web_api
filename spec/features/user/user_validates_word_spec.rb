@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "When a user visits the home page" do
   context "They enter a valid word in the word validator" do
-    xit "should inform them that it is a valid word" do
+    it "should inform them that it is a valid word" do
       VCR.use_cassette("user_searches_valid_word") do
         visit '/'
 
