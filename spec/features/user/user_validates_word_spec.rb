@@ -4,8 +4,8 @@ describe "When a user visits the home page" do
   context "They enter a valid word in the word validator" do
     it "should inform them that it is a valid word" do
       visit '/'
-
-      find('.word_validator').set('ponies')
+      
+      fill_in "query", with: 'ponies'
       click_button('Validate Word')
 
       expect(current_path).to eq(root_path)
