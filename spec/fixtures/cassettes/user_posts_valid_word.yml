@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://od-api.oxforddictionaries.com/api/v1/inflections/en/ponies
+    uri: https://od-api.oxforddictionaries.com/api/v1/inflections/en/at
     body:
       encoding: US-ASCII
       string: ''
@@ -25,13 +25,13 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Wed, 21 Feb 2018 19:11:31 GMT
+      - Wed, 21 Feb 2018 19:11:32 GMT
       Server:
       - openresty/1.9.7.4
       Version:
       - v3.6.1-32-gd5e2d53
       Content-Length:
-      - '1819'
+      - '1912'
       Connection:
       - keep-alive
     body:
@@ -43,60 +43,65 @@ http_interactions:
             },
             "results": [
                 {
-                    "id": "ponies",
+                    "id": "at",
                     "language": "en",
                     "lexicalEntries": [
                         {
-                            "grammaticalFeatures": [
-                                {
-                                    "text": "Plural",
-                                    "type": "Number"
-                                }
-                            ],
                             "inflectionOf": [
                                 {
-                                    "id": "pony",
-                                    "text": "pony"
+                                    "id": "at",
+                                    "text": "At"
+                                },
+                                {
+                                    "id": "at",
+                                    "text": "at"
                                 }
                             ],
                             "language": "en",
-                            "lexicalCategory": "Noun",
-                            "text": "ponies"
+                            "lexicalCategory": "Preposition",
+                            "text": "at"
+                        },
+                        {
+                            "inflectionOf": [
+                                {
+                                    "id": "at",
+                                    "text": "At"
+                                },
+                                {
+                                    "id": "at",
+                                    "text": "at"
+                                }
+                            ],
+                            "language": "en",
+                            "lexicalCategory": "Other",
+                            "text": "At"
                         },
                         {
                             "grammaticalFeatures": [
                                 {
                                     "text": "Singular",
                                     "type": "Number"
-                                },
-                                {
-                                    "text": "Present",
-                                    "type": "Tense"
-                                },
-                                {
-                                    "text": "Third",
-                                    "type": "Person"
                                 }
                             ],
                             "inflectionOf": [
                                 {
-                                    "id": "pony_up",
-                                    "text": "pony up"
+                                    "id": "at",
+                                    "text": "At"
                                 },
                                 {
-                                    "id": "pony",
-                                    "text": "pony"
+                                    "id": "at",
+                                    "text": "at"
                                 }
                             ],
                             "language": "en",
-                            "lexicalCategory": "Verb",
-                            "text": "ponies"
+                            "lexicalCategory": "Noun",
+                            "text": "at"
                         }
                     ],
-                    "word": "ponies"
+                    "word": "at"
                 }
             ]
         }
     http_version: 
-  recorded_at: Wed, 21 Feb 2018 19:11:31 GMT
+  recorded_at: Wed, 21 Feb 2018 19:11:32 GMT
 recorded_with: VCR 4.0.0
