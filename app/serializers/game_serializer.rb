@@ -5,13 +5,19 @@ class GameSerializer < ActiveModel::Serializer
     object[:id]
   end
 
-  def scores
-    object.plays[-2..-1].map do |play|
-      value = {}
-      value["user_id"] = play.user_id
-      value["score"] = play.score
-      value
-    end
+  def turns
+    
+
+    # object.plays.map do |play|
+    #   value = {}
+    #   value["user_id"] = play.user_id
+    #   value["score"] = play.score
+    #   value
+    # end
   end
+
+  # def scores
+  #   turns.reduce{|sum, score| sum.merge( score ){|key, first_score, second_score| first_score + second_score}}
+  # end
 
 end

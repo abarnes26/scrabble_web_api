@@ -15,15 +15,15 @@ describe "Game API" do
 
       expect(response).to be_success
 
-      game = JSON.parse(response.body)
+      game_call = JSON.parse(response.body)
 
       binding.pry
 
-      expect(game.game_id).to eq(game.id)
-      expect(game.scores[0].user_id).to eq(1)
-      expect(game.scores[0].score).to eq(15)
-      expect(game.scores[1].user_id).to eq(2)
-      expect(game.scores[1].score).to eq(16)
+      expect(game_call["game_id"]).to eq(game.id)
+      expect(game_call["scores"][0]["user_id"]).to eq(1)
+      expect(game_call["scores"][0]["score"]).to eq(15)
+      expect(game_call["scores"][1]["user_id"]).to eq(2)
+      expect(game_call["scores"][1]["score"]).to eq(16)
     end
   end
 end
