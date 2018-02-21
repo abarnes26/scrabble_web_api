@@ -13,18 +13,16 @@ class GameSerializer < ActiveModel::Serializer
     {user_id: player, score: score}
   end
 
-  def sorted
-    object.plays.sort_by do |play|
-               play.user_id
-             end
-  end
-
   def user_1_id
-    sorted[0].user_id
+    Play.all[0].user_id
   end
 
   def user_2_id
-    sorted[-1].user_id
+    if Play.count.even?
+      Play.all[-1].user_id
+    else
+      Play.all[-2].user_id
+    end
   end
 
   def user_1_score

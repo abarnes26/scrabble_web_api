@@ -11,7 +11,9 @@ describe "Game API" do
       sal.plays.create(game: game, word: "josh", score: 14)
       sal.plays.create(game: game, word: "no", score: 2)
 
-      get "/api/v1/games/#{game.id}"
+      post "/api/v1/games/#{game.id}/plays?user_id=1&word=at"
+
+      get "/api/v1/games/#{game.id}" 
 
       expect(response).to be_success
 
@@ -19,7 +21,7 @@ describe "Game API" do
 
       expect(game_call["game_id"]).to eq(game.id)
       expect(game_call["scores"][0]["user_id"]).to eq(1)
-      expect(game_call["scores"][0]["score"]).to eq(15)
+      expect(game_call["scores"][0]["score"]).to eq(17)
       expect(game_call["scores"][1]["user_id"]).to eq(2)
       expect(game_call["scores"][1]["score"]).to eq(16)
     end
