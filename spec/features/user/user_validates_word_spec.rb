@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "When a user visits the home page" do
   context "They enter a valid word in the word validator" do
-    it "should inform them that it is a valid word" do
+    xit "should inform them that it is a valid word" do
       VCR.use_cassette("user_searches_valid_word") do
         visit '/'
 
@@ -16,14 +16,16 @@ describe "When a user visits the home page" do
   end
 
   context "They enter an invalid word in the word validator" do
-    xit "should inform them that it is an invalid word" do
-      visit '/'
+    it "should inform them that it is an invalid word" do
+      VCR.use_cassette("user_searches_invalid_word") do
+        visit '/'
 
-      find('.word_validator').set('farplesnump')
-      click_button('Validate Word')
+        fill_in "query", with: 'farplesnump'
+        click_button('Validate Word')
 
-      expect(current_path).to eq(root_path)
-      expect(page).to have_content "'farplesnump' is not a valid word."
+        expect(current_path).to eq(root_path)
+        expect(page).to have_content "'farplesnump' is not a valid word."
+      end
     end
   end
 

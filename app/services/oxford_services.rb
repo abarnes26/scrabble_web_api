@@ -21,6 +21,17 @@ class OxfordServices
 
     def get_json(url)
       response = conn.get(url)
-      JSON.parse(response.body, symbolize_names: true)
+      if valid_json?(response)
+        JSON.parse(response.body, symbolize_names: true)
+      else
+        return "invalid word"
+      end
+    end
+
+    def valid_json?(response)
+      JSON.parse(response.body)
+        return true
+      rescue JSON::ParserError => e
+        return false
     end
 end
