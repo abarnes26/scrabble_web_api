@@ -11,7 +11,7 @@ describe "Game API" do
       sal.plays.create(game: game, word: "josh", score: 14)
       sal.plays.create(game: game, word: "no", score: 2)
 
-      get '/api/v1/games/1'
+      get "/api/v1/games/#{game.id}"
 
       expect(response).to be_success
 
@@ -19,12 +19,14 @@ describe "Game API" do
 
       binding.pry
 
-      expect(game.game_id).to eq(1)
+      expect(game.game_id).to eq(game.id)
       expect(game.scores[0].user_id).to eq(1)
       expect(game.scores[0].score).to eq(15)
       expect(game.scores[1].user_id).to eq(2)
       expect(game.scores[1].score).to eq(16)
     end
+  end
+end
 #
 #     {
 #   "game_id":1,
