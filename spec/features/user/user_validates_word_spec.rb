@@ -3,13 +3,15 @@ require 'rails_helper'
 describe "When a user visits the home page" do
   context "They enter a valid word in the word validator" do
     it "should inform them that it is a valid word" do
-      visit '/'
-      
-      fill_in "query", with: 'ponies'
-      click_button('Validate Word')
+      VCR.use_cassette("user_searches_valid_word") do
+        visit '/'
 
-      expect(current_path).to eq(root_path)
-      expect(page).to have_content "'ponies' is a valid word and its root form is 'pony'."
+        fill_in "query", with: 'ponies'
+        click_button('Validate Word')
+
+        expect(current_path).to eq(root_path)
+        expect(page).to have_content "'ponies' is a valid word and its root form is 'pony'."
+      end
     end
   end
 
