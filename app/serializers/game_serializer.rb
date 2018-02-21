@@ -5,15 +5,35 @@ class GameSerializer < ActiveModel::Serializer
     object[:id]
   end
 
-  def turns
-    
-
-    # object.plays.map do |play|
+  def scores
+    # sorted = object.plays.sort_by do |play|
+    #            play.user_id
+    #          end
+    #
+    # user_1_id = sorted[0].user_id
+    # user_2_id = sorted[-1].user_id
+    #
+    # user_1_plays = Play.where(user_id: user_1_id)
+    # user_2_plays = Play.where(user_id: user_2_id)
+    #
+    # user_1_plays.map do |play|
     #   value = {}
-    #   value["user_id"] = play.user_id
-    #   value["score"] = play.score
-    #   value
-    # end
+    #     value["user_id"] = play.user_id
+    #     value["score"] = play.score
+    #     value
+    #
+    # binding.pry
+
+    array = object.plays.map do |play|
+      value = {}
+      value["user_id"] = play.user_id
+      value["score"] = play.score
+      value
+    end
+
+    binding.pry
+
+    array.sum {|h| h["score"]}
   end
 
   # def scores
