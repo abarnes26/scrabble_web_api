@@ -1,0 +1,8 @@
+<div class="word_validator">
+  <%= form_tag("/word_validaor", method: "get") do %>
+    <%= label_tag(:query, "Validate:") %>
+    <%= text_field_tag(:query) %>
+  <%= submit_tag("Validate Word") %>
+<% end %>
+
+</div>
