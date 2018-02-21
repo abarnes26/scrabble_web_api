@@ -17,8 +17,6 @@ describe "Game API" do
 
       game_call = JSON.parse(response.body)
 
-      binding.pry
-
       expect(game_call["game_id"]).to eq(game.id)
       expect(game_call["scores"][0]["user_id"]).to eq(1)
       expect(game_call["scores"][0]["score"]).to eq(15)
