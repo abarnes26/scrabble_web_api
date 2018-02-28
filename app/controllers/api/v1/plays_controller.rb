@@ -1,4 +1,5 @@
 class Api::V1::PlaysController < ApplicationController
+  protect_from_forgery with: :null_session
 
   def create
     game = Game.find(game_params)
@@ -6,9 +7,8 @@ class Api::V1::PlaysController < ApplicationController
     unless response == "invalid word"
       game.plays.create(user_id: user_params, word: word_params)
     else
-      return "#{word_params} is not a valid word"
+      render json: {message: "#{word_params} is not a valid word."}.to_json
     end
-    redirect_to root_path
   end
 
   private

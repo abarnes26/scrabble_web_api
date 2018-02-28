@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://od-api.oxforddictionaries.com/api/v1/inflections/en/ponies
+    uri: https://od-api.oxforddictionaries.com/api/v1/inflections/en/words
     body:
       encoding: US-ASCII
       string: ''
@@ -25,13 +25,13 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Wed, 28 Feb 2018 15:50:19 GMT
+      - Wed, 28 Feb 2018 15:50:20 GMT
       Server:
       - openresty/1.9.7.4
       Version:
       - v3.6.1-32-gd5e2d53
       Content-Length:
-      - '1819'
+      - '1671'
       Connection:
       - keep-alive
     body:
@@ -43,7 +43,7 @@ http_interactions:
             },
             "results": [
                 {
-                    "id": "ponies",
+                    "id": "words",
                     "language": "en",
                     "lexicalEntries": [
                         {
@@ -55,20 +55,16 @@ http_interactions:
                             ],
                             "inflectionOf": [
                                 {
-                                    "id": "pony",
-                                    "text": "pony"
+                                    "id": "word",
+                                    "text": "word"
                                 }
                             ],
                             "language": "en",
                             "lexicalCategory": "Noun",
-                            "text": "ponies"
+                            "text": "words"
                         },
                         {
                             "grammaticalFeatures": [
-                                {
-                                    "text": "Singular",
-                                    "type": "Number"
-                                },
                                 {
                                     "text": "Present",
                                     "type": "Tense"
@@ -76,24 +72,24 @@ http_interactions:
                                 {
                                     "text": "Third",
                                     "type": "Person"
+                                },
+                                {
+                                    "text": "Singular",
+                                    "type": "Number"
                                 }
                             ],
                             "inflectionOf": [
                                 {
-                                    "id": "pony_up",
-                                    "text": "pony up"
-                                },
-                                {
-                                    "id": "pony",
-                                    "text": "pony"
+                                    "id": "word",
+                                    "text": "word"
                                 }
                             ],
                             "language": "en",
                             "lexicalCategory": "Verb",
-                            "text": "ponies"
+                            "text": "words"
                         }
                     ],
-                    "word": "ponies"
+                    "word": "words"
                 }
             ]
         }
